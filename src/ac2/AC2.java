@@ -15,8 +15,8 @@ public class AC2 {
        List<VeiculoClasse> veiculos = new ArrayList<>();
 
               
-      viagens.add(new Viagem("Sao Roque", "Sorocaba", 70.0, "Caio", "Fiestinha", 20));
-      viagens.add(new Viagem("Capela do Alto", "Sorocaba", 47.0, "Gabriel", "Renegade", 15));
+      viagens.add(new Viagem("Sao Roque", "Sorocaba", 70.0, "Caio", "Fiestinha"));
+      viagens.add(new Viagem("Capela do Alto", "Sorocaba", 47.0, "Gabriel", "Renegade"));
        
        condutores.add(new Condutor("Caio", 456456456.89, "10081995", 60000));
        condutores.add(new Condutor("Gabriel", 789789789.12, "16032001", 78000));
@@ -32,12 +32,12 @@ public class AC2 {
        VeiculoClasse mt = new Moto(160, "CB", "Gasolina", "BXMt234", 32.0);
        VeiculoClasse cm = new Caminhao(4, "Scania", "Diesel", "EPL3E23", 3.86);
        
-        System.out.println("Valor da viagem: " + vc.consumo(70, 4.59));
-        System.out.println("Valor da Viagem: " + mt.consumo(160, 4.17));
-        System.out.println("Valor da Viagem: " + cm.consumo(200, 7.78));
+        System.out.println("Consumo em R$ por viagem: " + vc.consumo(120, 4.59));
+        System.out.println("Consumo em R$ por viagem: " + mt.consumo(160, 4.17));
+        System.out.println("Consumo em R$ por viagem: " + cm.consumo(200, 7.78));
        
-       Viagem vg = new Viagem("Campinas", "Flores", 2000.0, "Thiagão", "Golzinho", 20);
-       System.out.println("Custo da viagem: " + vg.custo(70, 15));
+       Viagem vg = new Viagem("Campinas", "Flores", 2000.0, "Thiagão", "Golzinho");
+        System.out.println(vg.custo(10, 4.89, 1400));
         
        Relatorios.imprimeVeiculo(veiculos);
        Relatorios.imprimeViagem(viagens);

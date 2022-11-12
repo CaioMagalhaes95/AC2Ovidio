@@ -7,31 +7,27 @@ public class Viagem implements Comparable {
      private String cidadeOrigem;
      private String cidadeDestino;
      private double distancia;
-     private int diariasCondutor;
+     private double diariasCondutor;
 
-    public Viagem(String cidadeOrigem, String cidadeDestino, double distancia, String condutor, String veiculo, int diariasCondutor) {
+    public Viagem(String cidadeOrigem, String cidadeDestino, double distancia, String condutor, String veiculo) {
         this.cidadeOrigem = cidadeOrigem;
         this.cidadeDestino = cidadeDestino;
         this.distancia = distancia;
         this.condutor = condutor;
         this.veiculo = veiculo;
-        setDiariasCondutor(diariasCondutor);
+       
          
     }
 
-    public int getDiariasCondutor() {
+    public double getDiariasCondutor() {
         return diariasCondutor;
     }
 
-    public void setDiariasCondutor (int diariasCondutor){
-        
-    if (diariasCondutor > 29)
-            throw new RuntimeException("Tempo de trabalho excedido pela CLT");
+    public void setDiariasCondutor (double diariasCondutor){
+       
         this.diariasCondutor = diariasCondutor;
 
     }
-
-
     
     public String getCidadeOrigem() {
         return cidadeOrigem;
@@ -72,10 +68,16 @@ public class Viagem implements Comparable {
     public void setDistancia(double distancia) {
         this.distancia = distancia;
     }
+    
+    public double calcularDiarias(double distancia){
+        double numerodiarias = distancia / 700;
+        return numerodiarias;
+    }
 
-     public double custo(double consumo, int diariasCondutor){
-         double resultado = consumo + diariasCondutor;
-         return resultado;
+     public String custo(double consumoporkm, double valorCombustivel, double distancia){
+         
+         double resultado = (distancia / consumoporkm) * valorCombustivel;
+         return "Custo de viagem: " + resultado + " Diarias: " + calcularDiarias(distancia);
      }
      
 
@@ -87,6 +89,7 @@ public class Viagem implements Comparable {
      
    
    public String toString(){
-       return "\nViagens:\nCondutor: " + this.condutor + "\nVeiculo: " + this.veiculo + "\nOrigem: " + this.cidadeOrigem + "\nDestino: " + this.cidadeDestino + "\nDistancia: " + this.distancia;
+       return "\nViagens:\nCondutor: " + this.condutor + "\nVeiculo: " + this.veiculo
+               + "\nOrigem: " + this.cidadeOrigem + "\nDestino: " + this.cidadeDestino + "\nDistancia: " + this.distancia;
    }    
 }
