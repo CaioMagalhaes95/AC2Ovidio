@@ -46,7 +46,19 @@ public class Condutor implements Comparable{
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+    @Override
+    public int compareTo(Object t) {
+        
+        Condutor um = (Condutor) t;
+        return (int) (this.cpf - um.cpf);
+    }
     
+    
+    public String toString(){
+        return "\nCondutores:\nNome: " + this.nome + "\nCPF: " + this.cpf + 
+                "\nData de Nascimento: " + this.datanasc + "\nSalario: " + this.salario;
+    }
     
     
 }

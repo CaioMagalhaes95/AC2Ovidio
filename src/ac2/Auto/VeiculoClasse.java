@@ -58,7 +58,13 @@ public class VeiculoClasse implements Veiculo, Comparable {
 
     @Override
     public double consumo(double distanciaPercorrida, double valorCombustivel) {
-     return 0;    
+        double consumoViagem = (distanciaPercorrida / consumo) * valorCombustivel;
+     return consumoViagem;    
+    }
+
+    @Override
+    public int compareTo(Object t) {
+     return nome.compareTo(nome);
     }
    
 }

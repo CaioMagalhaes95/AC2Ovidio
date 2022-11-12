@@ -1,29 +1,52 @@
 package FolhaDePagamento;
 import Condutor.Condutor;
-import java.util.List;
+import java.util.*;
 
-public class FolhaDePagamento {
+
+public class FolhaDePagamento{
     
-    public String mes;
-    public int ano;
+    
+  
     List <Condutor> condutores;
+    Date data = new Date();
+
+    public FolhaDePagamento(List<Condutor> condutores, Date data) {
+        this.condutores = condutores;
+       
+    }
+
+   
+
     
-    public FolhaDePagamento(List<Condutor> c){
-        this.condutores = c;
+   
+
+    public List<Condutor> getCondutores() {
+        return condutores;
+    }
+
+    public void setCondutores(List<Condutor> condutores) {
+        this.condutores = condutores;
     }
     
-    public double totalAPagar(){
+    
+    
+    public static double totalAPagar(List<Condutor> condutores){
         double total = 0;
         for(Condutor c : condutores){
             total = total + c.getSalario();
         }
         return total;
+    
     }
     
-    public void imprimir(){
+    public static void imprimir(List<Condutor> condutores){
+        
         for(Condutor c : condutores){
-            System.out.println(c.getNome() + " " + c.getSalario());
+            System.out.println("\n" + c.getNome() + "\n " + c.getSalario());
+            
         }
-        totalAPagar();
+            System.out.println("Total à pagar: " + totalAPagar(condutores));
     }
+
+  
 }
