@@ -2,51 +2,52 @@ package Viagem;
 
 
 public class Viagem implements Comparable {
+    
      private String condutor;
      private String veiculo;
-     private String cidadeOrigem;
-     private String cidadeDestino;
+     private String origem;
+     private String destino;
      private double distancia;
-     private int diariasCondutor;
+     private int diarias;
 
-    public Viagem(String cidadeOrigem, String cidadeDestino, double distancia, String condutor, String veiculo, int diariasCondutor) {
-        this.cidadeOrigem = cidadeOrigem;
-        this.cidadeDestino = cidadeDestino;
+    public Viagem(String origem, String destino, double distancia, String condutor, String veiculo, int diarias) {
+        this.origem = origem;
+        this.destino = destino;
         this.distancia = distancia;
         this.condutor = condutor;
         this.veiculo = veiculo;
-        setDiariasCondutor(diariasCondutor);
+        setDiarias(diarias);
          
     }
 
-    public int getDiariasCondutor() {
-        return diariasCondutor;
+    public int getDiarias() {
+        return diarias;
     }
 
-    public void setDiariasCondutor (int diariasCondutor){
+    public void setDiarias (int diarias){
         
-    if (diariasCondutor > 29)
+    if (diarias > 29)
             throw new RuntimeException("Tempo de trabalho excedido pela CLT");
-        this.diariasCondutor = diariasCondutor;
+        this.diarias = diarias;
 
     }
 
 
     
-    public String getCidadeOrigem() {
-        return cidadeOrigem;
+    public String getOrigem() {
+        return origem;
     }
 
-    public void setCidadeOrigem(String cidadeOrigem) {
-        this.cidadeOrigem = cidadeOrigem;
+    public void setOrigem(String origem) {
+        this.origem = origem;
     }
 
-    public String getCidadeDestino() {
-        return cidadeDestino;
+    public String getDestino() {
+        return destino;
     }
 
-    public void setCidadeDestino(String cidadeDestino) {
-        this.cidadeDestino = cidadeDestino;
+    public void setDestino(String destino) {
+        this.destino = destino;
     }
 
     public String getCondutor() {
@@ -81,12 +82,12 @@ public class Viagem implements Comparable {
 
     @Override
     public int compareTo(Object t) {
-        Viagem um = (Viagem) t;
-        return (int)(this.diariasCondutor - um.diariasCondutor);
+        Viagem primeiro = (Viagem) t;
+        return (int)(this.diarias - primeiro.diarias);
     }
      
    
    public String toString(){
-       return "\nViagens:\nCondutor: " + this.condutor + "\nVeiculo: " + this.veiculo + "\nOrigem: " + this.cidadeOrigem + "\nDestino: " + this.cidadeDestino + "\nDistancia: " + this.distancia;
+       return "\nViagens:\nCondutor: " + this.condutor + "\nVeiculo: " + this.veiculo + "\nOrigem: " + this.origem + "\nDestino: " + this.destino + "\nDistancia: " + this.distancia;
    }    
 }
