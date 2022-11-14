@@ -84,7 +84,7 @@ public class Viagem implements Comparable {
     @Override
     public int compareTo(Object t) {
         Viagem um = (Viagem) t;
-        return (int)(this.diariasCondutor - um.diariasCondutor);
+        return (int)(this.distancia - um.distancia);
     }
      
    
