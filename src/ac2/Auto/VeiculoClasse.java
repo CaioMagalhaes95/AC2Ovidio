@@ -1,7 +1,7 @@
 
 package ac2.Auto;
 
-public class VeiculoClasse implements Veiculo, Comparable {
+public abstract class VeiculoClasse implements Veiculo, Comparable {
    protected String nome;
    protected String combustivel;
    protected String placa;
